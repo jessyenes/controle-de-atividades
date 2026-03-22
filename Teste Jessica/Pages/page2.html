@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- JS -->
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+   <header class="header">
+    <p class="user-info">👤 <span id="nomeUsuario"></span></p>
+    <h1 class="logo">📊 Controle de Atividades</h1>
+
+    <!-- BOTÃO MOBILE -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav aria-label="Menu principal" id="menu">
+        <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Início</a></li>
+            <li><a href="page2.html" class="nav-link ativo">Registrar</a></li>
+            <li><a href="historico.html" class="nav-link">Histórico</a></li>
+
+            <!-- BOTÃO SAIR -->
+            <li>
+                <button id="btnSair" class="btn-sair">Sair</button>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+
+    <h1 class="titulo-pagina">Registrar Atividade</h1>
+
+    <!-- ATIVIDADES -->
+    <section class="card">
+
+        <h2>Selecione a atividade</h2>
+
+        <div id="atividades" class="grupo-atividades">
+
+            <button class="list-item" data-parada="DDS">👷‍♂️ DDS</button>
+            <button class="list-item" data-parada="Troca de Turno">🔀 Troca de Turno</button>
+
+            <button type="button" class="list-item" data-parada="Refeição">🍽️ Refeição</button>
+            <button type="button" class="list-item" data-parada="Parada Pessoal">🚹 Parada Pessoal</button>
+            <button type="button" class="list-item" data-parada="Manutenção">🔧 Manutenção</button>
+            <button type="button" class="list-item" data-parada="Chuva">🌧️ Chuva</button>
+            <button type="button" class="list-item" data-parada="Neblina">☁️ Neblina</button>
+            <button type="button" class="list-item" data-parada="Poeira">🧹 Poeira</button>
+            <button type="button" class="list-item" data-parada="Acerto de Praça">⭕ Acerto de Praça</button>
+            <button type="button" class="list-item" data-parada="Acidente">⚠️ Acidente</button>
+            <button type="button" class="list-item" data-parada="Abastecimento">⛽ Abastecimento</button>
+            <button type="button" class="list-item" data-parada="Aguardando Britador">⛏️ Aguardando Britador</button>
+            <button type="button" class="list-item" data-parada="Disponivel">✅ Disponível</button>
+            <button type="button" class="list-item" data-parada="Limpeza de Báscula">🧼 Limpeza de Báscula</button>
+            <button type="button" class="list-item" data-parada="Limpeza de Equipamento">🧽 Limpeza de Equipamento</button>
+            <button type="button" class="list-item" data-parada="Aguardando Equipamento de Carga">🫷 Aguardando Equip de Carga</button>
+            <button type="button" class="list-item" data-parada="Falta de Combustível">🤏 Falta de Combustível</button>
+            <button type="button" class="list-item" data-parada="Falta de Frente">🏁 Falta de Frente</button>
+            <button type="button" class="list-item" data-parada="Preenchendo Documentação">✍ Preenchendo Documentação</button>
+            <button type="button" class="list-item" data-parada="Fila no Carregamento">👥 Fila no Carregamento</button>
+            <button type="button" class="list-item" data-parada="Deslocamento">🚚 Deslocamento</button>
+            <button type="button" class="list-item" data-parada="Detonação">💥 Detonação</button>
+            <button type="button" class="list-item" data-parada="Aferição de Balança">⚖ Aferição de Balança</button>
+            <button type="button" class="list-item" data-parada="Outro">🕵️‍♂️ Outro</button>
+
+        </div>
+
+        <p class="atividade-selecionada">
+            <strong>Atividade selecionada:</strong>
+            <span id="atividadeSelecionada">Nenhuma</span>
+        </p>
+
+    </section>
+
+    <!-- CRONÔMETRO -->
+    <section class="card bloco-cronometro">
+
+        <h2>⏱ Cronômetro</h2>
+
+        <div id="cronometro" class="cronometro">
+            00:00:00
+        </div>
+
+        <div class="acoes">
+            <button id="btnIniciar" class="btn-primary">▶ Iniciar</button>
+            <button id="btnParar" class="btn-secundario">⏹ Parar</button>
+            <button id="btnResetar" class="btn-reset">🔄 Resetar</button>
+        </div>
+
+    </section>
+
+    <!-- INFORMAÇÕES -->
+    <section class="card">
+
+    <h2>📋 Informações da Atividade</h2>
+
+    <div class="info-cards">
+
+        <div class="info-box">
+            <span class="info-label">📅 Data</span>
+            <span id="dataAtual" class="info-valor">--/--/----</span>
+        </div>
+
+        <div class="info-box">
+            <span class="info-label">🕒 Início</span>
+            <span id="horaInicio" class="info-valor">--:--:--</span>
+        </div>
+
+        <div class="info-box">
+            <span class="info-label">🏁 Fim</span>
+            <span id="horaFim" class="info-valor">--:--:--</span>
+        </div>
+
+        <div class="info-box destaque">
+            <span class="info-label">⏱ Duração</span>
+            <span id="duracao" class="info-valor">00:00:00</span>
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 - Controle de Atividades</p>
+    </footer>
+<div id="toast" class="toast">✅ Atividade salva com sucesso!</div>
+</body>
+</html>

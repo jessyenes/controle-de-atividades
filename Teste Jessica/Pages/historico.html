@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard de Atividades</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Chart.js (sempre antes do seu JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- JS -->
+    <script src="../js/historico.js" defer></script>
+</head>
+
+<body>
+
+<header class="header">
+
+    <h1 class="logo">📊 Controle de Atividades</h1>
+
+    <!-- BOTÃO MOBILE -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav aria-label="Menu principal" id="menu">
+        <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Início</a></li>
+            <li><a href="page2.html" class="nav-link">Registrar</a></li>
+            <li><a href="historico.html" class="nav-link ativo">Histórico</a></li>
+
+            <!-- BOTÃO SAIR -->
+            <li>
+                <button id="btnSair" class="btn-sair">Sair</button>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <!-- CARDS -->
+    <section class="cards">
+        <div class="card">
+            <h3>Total de Registros</h3>
+            <p id="totalRegistros">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Tempo Total</h3>
+            <p id="tempoTotal">00:00:00</p>
+        </div>
+
+        <div class="card">
+            <h3>Atividade Mais Frequente</h3>
+            <p id="atividadeTop">-</p>
+        </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filtros">
+
+        <div>
+            <label>Atividade:</label>
+            <select id="filtroAtividade">
+                <option value="">Todas</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Período:</label>
+            <select id="filtroData">
+                <option value="">Todos</option>
+                <option value="hoje">Hoje</option>
+                <option value="semana">Esta semana</option>
+                <option value="mes">Este mês</option>
+            </select>
+        </div>
+
+    </section>
+
+    <!-- TABELA -->
+    <section class="tabela-container">
+        <table id="tabelaHistorico">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Atividade</th>
+                    <th>Início</th>
+                    <th>Fim</th>
+                    <th>Duração</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabela"></tbody>
+        </table>
+    </section>
+
+    <!-- GRÁFICO -->
+    <section class="grafico-container">
+        <h2>Resumo das Atividades</h2>
+
+        <div class="grafico-box">
+            <canvas id="graficoAtividades"></canvas>
+        </div>
+    </section>
+
+    <!-- BOTÃO -->
+    <button id="btnLimpar" class="btn-perigo">🗑 Limpar Histórico</button>
+
+</main>
+
+</body>
+</html>
