@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- JS -->
-    <script src="../js/historico.js" defer></script>
+    <script src="../js/script.js" defer></script>
 </head>
 
 <body>
@@ -61,26 +61,31 @@
     </section>
 
     <!-- FILTROS -->
-    <section class="filtros">
+   <div class="filtros">
 
-        <div>
-            <label>Atividade:</label>
-            <select id="filtroAtividade">
-                <option value="">Todas</option>
-            </select>
-        </div>
+    <div>
+        <label>Atividade</label>
+        <select id="filtroAtividade">
+            <option value="">Todas</option>
+        </select>
+    </div>
 
-        <div>
-            <label>Período:</label>
-            <select id="filtroData">
-                <option value="">Todos</option>
-                <option value="hoje">Hoje</option>
-                <option value="semana">Esta semana</option>
-                <option value="mes">Este mês</option>
-            </select>
-        </div>
+    <div>
+        <label>Data</label>
+        <input type="date" id="filtroData">
+    </div>
 
-    </section>
+    <div>
+        <label>Hora Início</label>
+        <input type="time" id="filtroInicio">
+    </div>
+
+    <div>
+        <label>Hora Fim</label>
+        <input type="time" id="filtroFim">
+    </div>
+
+</div>
 
     <!-- TABELA -->
     <section class="tabela-container">
@@ -99,7 +104,15 @@
         </table>
     </section>
 
+    <div class="grafico-header">
+    <h3>📊 Análise de Atividades</h3>
+
     <!-- GRÁFICO -->
+    <select id="tipoGrafico">
+        <option value="bar">📊 Barras</option>
+        <option value="pie">🥧 Pizza</option>
+    </select>
+</div>
     <section class="grafico-container">
         <h2>Resumo das Atividades</h2>
 

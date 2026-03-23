@@ -20,60 +20,48 @@
 
     <!-- Cabeçalho -->
     <header class="header">
+        <h1 class="logo">📊 Controle</h1>
 
-    <h1 class="logo">📊 Controle</h1>
+        <!-- BOTÃO MOBILE -->
+        <button class="menu-toggle" id="menuToggle">☰</button>
 
-    <!-- BOTÃO MOBILE -->
-    <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav aria-label="Menu principal" id="menu">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link ativo">Início</a></li>
+                <li><a href="pages/page2.html" class="nav-link">Registrar</a></li>
+                <li><a href="pages/historico.html" class="nav-link">Histórico</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav aria-label="Menu principal" id="menu">
-        <ul class="nav-list">
-            <li><a href="index.html" class="nav-link ativo">Início</a></li>
-            <li><a href="pages/page2.html" class="nav-link">Registrar</a></li>
-            <li><a href="pages/historico.html" class="nav-link">Histórico</a></li>
-        </ul>
-    </nav>
-
-</header>
     <!-- Conteúdo principal -->
     <main class="login-wrapper">
+        <div class="login-card">
+            <h1>📊 Controle de Atividades</h1>
+            <p class="subtitle">Organize e acompanhe suas atividades diárias</p>
 
-    <div class="login-card">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Usuário</label>
+                    <input type="text" name="username" placeholder="Digite seu usuário" required>
+                </div>
 
-        <h1>📊 Controle de Atividades</h1>
-        <p class="subtitle">Organize e acompanhe suas atividades diárias</p>
+                <div class="form-group">
+                    <label>Unidade (UT)</label>
+                    <select name="UT" required>
+                        <option value="">Selecione...</option>
+                        <option value="sobral">Sobral</option>
+                        <option value="xambioa">Xambioá</option>
+                        <option value="vidal_ramos">Vidal Ramos</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
 
-        <form id="loginForm" action="pages/page2.html" method="get">
-
-            <div class="form-group">
-                <label>Usuário</label>
-                <input type="text" name="username" placeholder="Digite seu usuário" required>
-            </div>
-
-            <div class="form-group">
-                <label>Unidade (UT)</label>
-                <select name="UT" required>
-                    <option value="">Selecione...</option>
-                    <option value="sobral">Sobral</option>
-                    <option value="xambioa">Xambioá</option>
-                    <option value="vidal_ramos">Vidal Ramos</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Senha</label>
-                <input type="password" name="password" placeholder="Digite sua senha" required>
-            </div>
-
-            <button type="submit" class="btn-primary">
-                Entrar
-            </button>
-
-        </form>
-
-    </div>
-
-</main>
+            <div id="toast" class="toast"></div>
+        </div>
+    </main>
 
     <!-- Rodapé -->
     <footer>
