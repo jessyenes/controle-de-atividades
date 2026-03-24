@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamentos | Controle</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">🚜 Frota</h1>
+
+        <div class="header-actions">
+            <a href="material.html" class="btn-voltar">← Voltar</a>
+            <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h2 class="titulo-pagina">Passo 4: Identificação da Frota</h2>
+
+        <section class="card">
+            <h3 class="titulo-secao">1. Selecione o Caminhão/Equipamento</h3>
+            
+            <div class="turno-grid">
+                <button class="turno-btn equipamento-btn" data-equipamento="CB01">CB01</button>
+                <button class="turno-btn equipamento-btn" data-equipamento="CB02">CB02</button>
+                <button class="turno-btn equipamento-btn" data-equipamento="CB03">CB03</button>
+            </div>
+
+            <div class="selecao-feedback">
+                <strong>Equipamento:</strong> 
+                <span id="equipamentoSelecionado" class="badge">Nenhum</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3 class="titulo-secao">2. Selecione o Equipamento de Carga</h3>
+            
+            <div class="turno-grid">
+                <button class="turno-btn carga-btn" data-carga="EH01">EH01</button>
+                <button class="turno-btn carga-btn" data-carga="EH02">EH02</button>
+                <button class="turno-btn carga-btn" data-carga="EH03">EH03</button>
+            </div>
+
+            <div class="selecao-feedback">
+                <strong>Carga:</strong> 
+                <span id="cargaSelecionada" class="badge">Nenhum</span>
+            </div>
+        </section>
+
+        <div class="turno-acoes">
+            <a href="material.html" class="btn-secundario">← Voltar</a>
+            
+            <button id="btnProximoEquipamento" class="btn-primary" disabled>
+                Próximo (Horímetro) →
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="footer-minimal">
+        <p>Sistema de Controle Operacional &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

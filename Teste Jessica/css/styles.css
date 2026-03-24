@@ -688,33 +688,85 @@ tr:hover {
     font-weight: bold;
 }
 
-/* ================= BOTÃO PRÓXIMO ================= */
+/* ================= AÇÕES (VOLTAR / PRÓXIMO) ================= */
 
 .turno-acoes {
-    margin-top: 20px;
+    margin-top: 30px;
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px; /* 🔥 separa os botões */
 }
 
-/* opcional: deixar maior */
-#btnProximo {
-    min-width: 140px;
-    font-weight: bold;
+/* BOTÕES BASE */
+.turno-acoes .btn-primary,
+.turno-acoes .btn-secundario {
+    padding: 10px 18px; /* 🔥 menor */
+    font-size: 14px;
+    border-radius: 10px;
+
+    min-width: 130px; /* tamanho consistente */
+
+    transition: all 0.25s ease;
 }
+
+/* BOTÃO VOLTAR */
+.btn-secundario {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    color: #ccc;
+}
+
+.btn-secundario:hover {
+    background: #2a2a2a;
+    border-color: #ff6a00;
+    color: white;
+}
+
+/* BOTÃO PRÓXIMO */
+.btn-primary {
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    color: white;
+    border: none;
+
+    box-shadow: 0 4px 15px rgba(255,106,0,0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,106,0,0.6);
+}
+
 /* BOTÃO DESABILITADO */
-#btnProximo:disabled {
+.btn-primary:disabled {
     background: #333;
     color: #777;
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
 }
-
 /* QUANDO ATIVO */
 #btnProximo:not(:disabled) {
     background: linear-gradient(135deg, #ff6a00, #ff8c00);
     color: white;
     cursor: pointer;
+}
+
+/* ORIGEM (leve azul) */
+.origem-btn.ativo {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+/* DESTINO (laranja padrão) */
+.destino-btn.ativo {
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+}
+
+.turno-btn {
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 

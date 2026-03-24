@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu | Controle de Atividades</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">📊 Controle</h1>
+        
+        <div class="header-actions">
+            <span class="user-info">👤 <span id="nomeUsuario">Usuário</span></span>
+            <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="menu-container">
+
+        <section class="menu-top">
+            <h2 class="menu-title">
+                <span id="saudacao">Carregando...</span>
+            </h2>
+        </section>
+
+        <section class="menu-kpis">
+
+            <div class="kpi-card">
+                <span class="kpi-label">⏱ Tempo Hoje</span>
+                <span id="kpiTempoHoje" class="kpi-value">00:00:00</span>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-label">📊 Registros</span>
+                <span id="kpiTotal" class="kpi-value">0</span>
+            </div>
+
+            <div class="kpi-card">
+                <span class="kpi-label">🔥 Atividade Top</span>
+                <span id="kpiTop" class="kpi-value">-</span>
+            </div>
+
+        </section>
+
+        <section class="menu-grid">
+
+    <a href="turno.html" class="menu-card destaque">
+        <div class="menu-icon">▶️</div>
+        <h3>Iniciar Turno</h3>
+        <p>Começar novo registro de atividade</p>
+    </a>
+
+    <a href="historico.html" class="menu-card">
+        <div class="menu-icon">📅</div>
+        <h3>Histórico</h3>
+        <p>Ver relatórios e produtividade</p>
+    </a>
+
+    <a href="configuracoes.html" class="menu-card">
+        <div class="menu-icon">⚙️</div>
+        <h3>Configurações</h3>
+        <p>Gerenciar Operadores e Frota</p>
+    </a>
+
+</section>
+
+    </main>
+
+    <footer class="footer-minimal">
+        <p>Sistema de Controle Operacional &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

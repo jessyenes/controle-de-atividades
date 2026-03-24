@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | Controle</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">⚙️ Ajustes</h1>
+
+        <div class="header-actions">
+            <a href="menu.html" class="btn-voltar">← Menu</a>
+            <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h2 class="titulo-pagina">Painel de Controle</h2>
+
+        <section class="menu-grid">
+            
+            <button id="abaOperadores" class="menu-card ativo">
+                <div class="menu-icon">👥</div>
+                <h3>Operadores</h3>
+                <p>Cadastrar ou remover usuários</p>
+            </button>
+
+            <button id="abaEquipamentos" class="menu-card">
+                <div class="menu-icon">🚜</div>
+                <h3>Equipamentos</h3>
+                <p>Gerenciar frota (CBs e EHs)</p>
+            </button>
+
+        </section>
+
+        <section class="card config-section">
+            <h3 id="tituloConfig">Gerenciar Operadores</h3>
+            
+            <div class="form-group-inline">
+                <input type="text" id="novoItem" placeholder="Nome ou Prefixo...">
+                <button id="btnAdicionar" class="btn-primary">Adicionar</button>
+            </div>
+
+            <hr>
+
+            <div class="lista-config-container">
+                <ul id="listaItens" class="lista-custom">
+                    </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-minimal">
+        <p>Configurações do Sistema &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

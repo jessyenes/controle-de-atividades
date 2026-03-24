@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material | Controle Operacional</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">📦 Carga</h1>
+
+        <div class="header-actions">
+            <a href="origem.html" class="btn-voltar">← Voltar</a>
+            <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h2 class="titulo-pagina">Passo 3: Tipo de Material</h2>
+
+        <section class="card">
+            <h3 class="titulo-secao">Selecione o material carregado</h3>
+            
+            <div class="turno-grid">
+                <button class="turno-btn material-btn" data-material="MINÉRIO">
+                    <span class="icon">🪨</span> MINÉRIO
+                </button>
+
+                <button class="turno-btn material-btn" data-material="ESTÉRIL">
+                    <span class="icon">🚜</span> ESTÉRIL
+                </button>
+
+                <button class="turno-btn material-btn" data-material="FOSFATO">
+                    <span class="icon">🌱</span> FOSFATO
+                </button>
+            </div>
+
+            <div class="selecao-feedback">
+                <strong>Material:</strong> 
+                <span id="materialSelecionado" class="badge">Nenhum</span>
+            </div>
+        </section>
+
+        <div class="turno-acoes">
+            <a href="origem.html" class="btn-secundario">← Voltar</a>
+            
+            <button id="btnProximoMaterial" class="btn-primary" disabled>
+                Próximo (Equipamento) →
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="footer-minimal">
+        <p>Sistema de Controle Operacional &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

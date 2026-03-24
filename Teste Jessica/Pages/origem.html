@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origem e Destino | Controle</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">📍 Trajeto</h1>
+
+        <div class="header-actions">
+            <a href="turno.html" class="btn-voltar">← Voltar</a>
+            <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <h2 class="titulo-pagina">Passo 2: Defina o Trajeto</h2>
+
+        <section class="card">
+            <h3 class="titulo-secao">1. Selecione a Origem</h3>
+            
+            <div class="turno-grid">
+                <button class="turno-btn origem-btn" data-origem="ORIGEM A">ORIGEM A</button>
+                <button class="turno-btn origem-btn" data-origem="ORIGEM B">ORIGEM B</button>
+                <button class="turno-btn origem-btn" data-origem="ORIGEM C">ORIGEM C</button>
+            </div>
+
+            <div class="selecao-feedback">
+                <strong>Origem:</strong> 
+                <span id="origemSelecionada" class="badge">Nenhuma</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3 class="titulo-secao">2. Selecione o Destino</h3>
+            
+            <div class="turno-grid">
+                <button class="turno-btn destino-btn" data-destino="DESTINO A">DESTINO A</button>
+                <button class="turno-btn destino-btn" data-destino="DESTINO B">DESTINO B</button>
+                <button class="turno-btn destino-btn" data-destino="DESTINO C">DESTINO C</button>
+            </div>
+
+            <div class="selecao-feedback">
+                <strong>Destino:</strong> 
+                <span id="destinoSelecionado" class="badge">Nenhum</span>
+            </div>
+        </section>
+
+        <div class="turno-acoes">
+            <a href="turno.html" class="btn-secundario">← Voltar</a>
+            
+            <button id="btnProximoOrigem" class="btn-primary" disabled>
+                Próximo (Material) →
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="footer-minimal">
+        <p>Sistema de Controle Operacional &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

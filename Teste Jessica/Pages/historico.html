@@ -3,128 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Controle de Atividades</title>
 
-    <title>Dashboard de Atividades</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 
-    <!-- Chart.js (sempre antes do seu JS) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- JS -->
     <script src="../js/script.js" defer></script>
 </head>
 
 <body>
 
 <header class="header">
+    <h1 class="logo">📊 Histórico</h1>
+    
+    <div class="header-actions">
+        <span class="user-info">👤 <span id="nomeUsuario"></span></span>
+        <button id="btnSair" class="btn-sair">Sair</button>
+    </div>
 
-    <h1 class="logo">📊 Controle de Atividades</h1>
-
-    <!-- BOTÃO MOBILE -->
-    <button class="menu-toggle" id="menuToggle">☰</button>
-
-    <nav aria-label="Menu principal" id="menu">
+    <nav aria-label="Menu principal">
         <ul class="nav-list">
-            <li><a href="../index.html" class="nav-link">Início</a></li>
+            <li><a href="menu.html" class="nav-link">Início</a></li>
             <li><a href="page2.html" class="nav-link">Registrar</a></li>
             <li><a href="historico.html" class="nav-link ativo">Histórico</a></li>
-
-            <!-- BOTÃO SAIR -->
-            <li>
-                <button id="btnSair" class="btn-sair">Sair</button>
-            </li>
         </ul>
     </nav>
-
 </header>
 
 <main class="container">
 
-    <!-- CARDS -->
-    <section class="cards">
-        <div class="card">
+    <section class="menu-kpis">
+        <div class="kpi-card">
             <h3>Total de Registros</h3>
-            <p id="totalRegistros">0</p>
+            <span id="totalRegistros" class="kpi-value">0</span>
         </div>
 
-        <div class="card">
+        <div class="kpi-card">
             <h3>Tempo Total</h3>
-            <p id="tempoTotal">00:00:00</p>
+            <span id="tempoTotal" class="kpi-value">00:00:00</span>
         </div>
 
-        <div class="card">
-            <h3>Atividade Mais Frequente</h3>
-            <p id="atividadeTop">-</p>
+        <div class="kpi-card">
+            <h3>Estado Principal</h3>
+            <span id="atividadeTop" class="kpi-value">-</span>
         </div>
     </section>
 
-    <!-- FILTROS -->
-   <div class="filtros">
+    <section class="card filtros-container">
+        <h3>🔎 Filtros de Busca</h3>
+        <div class="filtros-grid">
+            <div>
+                <label>Atividade</label>
+                <select id="filtroAtividade">
+                    <option value="">Todas</option>
+                    <option value="DDS">DDS</option>
+                    <option value="Refeição">Refeição</option>
+                    <option value="Manutenção">Manutenção</option>
+                    <option value="Chuva">Chuva</option>
+                    <option value="Deslocamento">Deslocamento</option>
+                    <option value="Disponível">Disponível</option>
+                </select>
+            </div>
 
-    <div>
-        <label>Atividade</label>
-        <select id="filtroAtividade">
-            <option value="">Todas</option>
-        </select>
-    </div>
+            <div>
+                <label>Data</label>
+                <input type="date" id="filtroData">
+            </div>
 
-    <div>
-        <label>Data</label>
-        <input type="date" id="filtroData">
-    </div>
+            <div>
+                <label>Início após</label>
+                <input type="time" id="filtroInicio">
+            </div>
 
-    <div>
-        <label>Hora Início</label>
-        <input type="time" id="filtroInicio">
-    </div>
-
-    <div>
-        <label>Hora Fim</label>
-        <input type="time" id="filtroFim">
-    </div>
-
-</div>
-
-    <!-- TABELA -->
-    <section class="tabela-container">
-        <table id="tabelaHistorico">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Atividade</th>
-                    <th>Início</th>
-                    <th>Fim</th>
-                    <th>Duração</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody id="corpoTabela"></tbody>
-        </table>
+            <div>
+                <label>Fim até</label>
+                <input type="time" id="filtroFim">
+            </div>
+        </div>
     </section>
 
-    <div class="grafico-header">
-    <h3>📊 Análise de Atividades</h3>
+    <section class="card tabela-container">
+        <div class="tabela-scroll">
+            <table id="tabelaHistorico">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Turno</th>
+                        <th>Origem/Destino</th>
+                        <th>Material</th>
+                        <th>Equipamento</th>
+                        <th>Horímetro</th>
+                        <th>Estado</th>
+                        <th>Início</th>
+                        <th>Fim</th>
+                        <th>Duração</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    </tbody>
+            </table>
+        </div>
+    </section>
 
-    <!-- GRÁFICO -->
-    <select id="tipoGrafico">
-        <option value="bar">📊 Barras</option>
-        <option value="pie">🥧 Pizza</option>
-    </select>
-</div>
-    <section class="grafico-container">
-        <h2>Resumo das Atividades</h2>
-
+    <section class="card">
+        <div class="grafico-header">
+            <h3>📊 Distribuição de Tempo</h3>
+            <select id="tipoGrafico" class="select-sm">
+                <option value="pie">🥧 Pizza</option>
+                <option value="bar">📊 Barras</option>
+            </select>
+        </div>
         <div class="grafico-box">
             <canvas id="graficoAtividades"></canvas>
         </div>
     </section>
 
-    <!-- BOTÃO -->
-    <button id="btnLimpar" class="btn-perigo">🗑 Limpar Histórico</button>
+    <div class="acoes-footer">
+        <button id="btnLimpar" class="btn-perigo">🗑️ Limpar Meus Registros</button>
+    </div>
 
 </main>
+
+<footer class="footer">
+    <p>&copy; 2026 - Sistema de Gestão Operacional</p>
+</footer>
 
 </body>
 </html>

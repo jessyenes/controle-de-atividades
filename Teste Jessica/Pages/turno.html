@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Turno | Controle</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">▶️ Iniciar Turno</h1>
+
+        <div class="header-actions">
+            <a href="menu.html" class="btn-voltar">← Voltar</a>
+            <button id="btnSair" class="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2 class="titulo-secao">Passo 1: Qual o seu turno?</h2>
+            <p class="subtitle">Selecione uma das opções abaixo para prosseguir.</p>
+
+            <div class="turno-grid">
+                <button class="turno-btn" data-turno="TURNO A">
+                    <span class="icon">🌅</span>
+                    TURNO A
+                </button>
+                
+                <button class="turno-btn" data-turno="TURNO B">
+                    <span class="icon">🌤️</span>
+                    TURNO B
+                </button>
+                
+                <button class="turno-btn" data-turno="TURNO C">
+                    <span class="icon">🌙</span>
+                    TURNO C
+                </button>
+            </div>
+
+            <div class="selecao-feedback">
+                <strong>Turno selecionado:</strong> 
+                <span id="turnoSelecionado" class="badge">Nenhum</span>
+            </div>
+        </section>
+        
+        <div class="turno-acoes">
+            <button id="btnProximo" class="btn-primary" disabled>
+                Próximo (Origem) →
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="footer-minimal">
+        <p>Sistema de Controle Operacional &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
